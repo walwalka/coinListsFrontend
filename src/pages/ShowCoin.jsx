@@ -12,7 +12,7 @@ const ShowCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:8081/coins/api/${id}`)
+      .get(`http://coinsbackend.walwalka.com/coins/api/${id}`)
       .then((response) => {
         setCoin(response.data);
         setLoading(false);

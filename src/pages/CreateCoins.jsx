@@ -25,7 +25,7 @@ const CreateCoins = () => {
     };
     setLoading(true);
     axios
-      .post('http://localhost:8081/coins/api', data)
+      .post('http://coinsbackend.walwalka.com/coins/api', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Created successfully', { variant: 'success' });
@@ -90,9 +90,9 @@ const CreateCoins = () => {
             className='border-2 border-gray-500 px-4 py-2  w-full '
           >
             <option value="">Please Select a value</option>
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-            <option value="unsure">Unsure</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Unsure">Unsure</option>
           </select>
         </div>
         <div className='my-4'>

@@ -19,7 +19,7 @@ const EditCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-    .get(`http://localhost:8081/coins/api/${id}`)
+    .get(`http://coinsbackend.walwalka.com/coins/api/${id}`)
     .then((response) => {
         setMintLocation(response.data.mintlocation);
         setMintYear(response.data.mintyear)
@@ -44,7 +44,7 @@ const EditCoin = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:8081/coins/api/${id}`, data)
+      .put(`http://coinsbackend.walwalka.com/coins/api/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Edited successfully', { variant: 'success' });
@@ -106,9 +106,9 @@ const EditCoin = () => {
             onChange={(e) => setCirculation(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           >
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-            <option value="unsure">Unsure</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Unsure">Unsure</option>
           </select>
         </div>
         <div className='my-4'>
