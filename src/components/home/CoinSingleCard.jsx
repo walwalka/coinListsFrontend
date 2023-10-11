@@ -22,24 +22,24 @@ const CoinSingleCard = ({ coin }) => {
       </div>
       <div className='flex justify-start items-center gap-x-2'>
         <BiUserCircle className='text-red-300 text-2xl' />
-        <h2 className='my-1'>{coin.mintLocation}</h2>
+        <h2 className='my-1'>{coin.mintlocation}</h2>
       </div>
       <div className='flex justify-start items-center gap-x-2'>
         <BiUserCircle className='text-red-300 text-2xl' />
-        <h2 className='my-1'>{coin.mintYear}</h2>
+        <h2 className='my-1'>{coin.mintyear}</h2>
       </div>
       <div className='flex justify-between items-center gap-x-2 mt-4 p-4'>
         <BiShow
           className='text-3xl text-blue-800 hover:text-black cursor-pointer'
           onClick={() => setShowModal(true)}
         />
-        <Link to={`/coins/details/${coin._id}`}>
+        <Link to={`/coins/details/${coin.id}`}>
           <BsInfoCircle className='text-2xl text-green-800 hover:text-black' />
         </Link>
-        <Link to={`/coins/edit/${coin._id}`}>
+        <Link to={`/coins/edit/${coin.id}`}>
           <AiOutlineEdit className='text-2xl text-yellow-600 hover:text-black' />
         </Link>
-        <Link to={`/coins/delete/${coin._id}`}>
+        <Link to={`/coins/delete/${coin.id}`}>
           <MdOutlineDelete className='text-2xl text-red-600 hover:text-black' />
         </Link>
       </div>

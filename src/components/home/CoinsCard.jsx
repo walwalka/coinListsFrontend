@@ -10,7 +10,7 @@ const CoinsCard = ({ coins }) => {
   return (
     <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
       {coins.map((item) => (
-        <CoinSingleCard key={item._id} coin={item} />
+        <CoinSingleCard key={item.id} coin={item} />
       ))}
     </div>
   );

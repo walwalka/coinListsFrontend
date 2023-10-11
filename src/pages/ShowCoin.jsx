@@ -12,7 +12,7 @@ const ShowCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://coinsbackend.walwalka.com/coins/${id}`)
+      .get(`http://localhost:8081/coins/api/${id}`)
       .then((response) => {
         setCoin(response.data);
         setLoading(false);
@@ -33,7 +33,7 @@ const ShowCoin = () => {
         <div className='flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4'>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Id</span>
-            <span>{coin._id}</span>
+            <span>{coin.id}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Type</span>
@@ -41,11 +41,11 @@ const ShowCoin = () => {
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Mint</span>
-            <span>{coin.mintLocation}</span>
+            <span>{coin.mintlocation}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Mint Year</span>
-            <span>{coin.mintYear}</span>
+            <span>{coin.mintyear}</span>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Circulation</span>

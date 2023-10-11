@@ -8,7 +8,7 @@ const CoinsTable = ({ coins }) => {
     <table className='w-full border-separate border-spacing-2'>
       <thead>
         <tr>
-          <th className='border border-slate-600 rounded-md'>No</th>
+          <th className='border border-slate-600 rounded-md'>Coin ID</th>
           <th className='border border-slate-600 rounded-md'>Coin Type</th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Mint Location
@@ -17,7 +17,7 @@ const CoinsTable = ({ coins }) => {
             Mint Year
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
-            Circulated?
+            Circulated
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Grade
@@ -29,7 +29,7 @@ const CoinsTable = ({ coins }) => {
       </thead>
       <tbody>
         {coins.map((coin, index) => (
-          <tr key={coin._id} className='h-8'>
+          <tr key={coin.id} className='h-8'>
             <td className='border border-slate-700 rounded-md text-center'>
               {index + 1}
             </td>
@@ -37,10 +37,10 @@ const CoinsTable = ({ coins }) => {
               {coin.type}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-              {coin.mintLocation}
+              {coin.mintlocation}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-              {coin.mintYear}
+              {coin.mintyear}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
               {coin.circulation}
@@ -50,13 +50,13 @@ const CoinsTable = ({ coins }) => {
             </td>
             <td className='border border-slate-700 rounded-md text-center'>
               <div className='flex justify-center gap-x-4'>
-                <Link to={`/coins/details/${coin._id}`}>
+                <Link to={`/coins/details/${coin.id}`}>
                   <BsInfoCircle className='text-2xl text-green-800' />
                 </Link>
-                <Link to={`/coins/edit/${coin._id}`}>
+                <Link to={`/coins/edit/${coin.id}`}>
                   <AiOutlineEdit className='text-2xl text-yellow-600' />
                 </Link>
-                <Link to={`/coins/delete/${coin._id}`}>
+                <Link to={`/coins/delete/${coin.id}`}>
                   <MdOutlineDelete className='text-2xl text-red-600' />
                 </Link>
               </div>

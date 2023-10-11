@@ -7,8 +7,8 @@ import { useSnackbar } from 'notistack';
 
 const CreateCoins = () => {
   const [type, setType] = useState('');
-  const [mintLocation, setMintLocation] = useState('');
-  const [mintYear, setMintYear] = useState('');
+  const [mintlocation, setMintLocation] = useState('');
+  const [mintyear, setMintYear] = useState('');
   const [circulation, setCirculation] = useState('');
   const [grade, setGrade] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,14 +18,14 @@ const CreateCoins = () => {
   const handleSaveCoin = () => {
     const data = {
       type,
-      mintLocation,
-      mintYear,
+      mintlocation,
+      mintyear,
       circulation,
       grade,
     };
     setLoading(true);
     axios
-      .post('http://coinsbackend.walwalka.com/coins', data)
+      .post('http://localhost:8081/coins/api', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Created successfully', { variant: 'success' });
@@ -48,18 +48,26 @@ const CreateCoins = () => {
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Type</label>
-          <input
-            type='text'
+          <select 
+            label="Type of Coin"
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className='border-2 border-gray-500 px-4 py-2 w-full'
-          />
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          >
+            <option value="">Please Select a value</option>            
+            <option value="Quarter">Quarter</option>
+            <option value="Dime">Dime</option>
+            <option value="Penny">Penny</option>
+            <option value="Nickel">Nickel</option>
+            <option value="Half Dollar">Half Dollar</option>
+            <option value="Dollar">Dollar</option>
+          </select>
         </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Mint Location</label>
           <input
             type='text'
-            value={mintLocation}
+            value={mintlocation}
             onChange={(e) => setMintLocation(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
@@ -67,20 +75,25 @@ const CreateCoins = () => {
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Mint Year</label>
           <input
-            type='number'
-            value={mintYear}
+            type='date'
+            value={mintyear}
             onChange={(e) => setMintYear(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Circulated</label>
-          <input
-            type='text'
+        <label className='text-xl mr-4 text-gray-500'>Circulation</label>
+          <select 
+            label="Circulated?"
             value={circulation}
             onChange={(e) => setCirculation(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
+          >
+            <option value="">Please Select a value</option>
+            <option value="yes" selected>Yes</option>
+            <option value="no">No</option>
+            <option value="unsure">Unsure</option>
+          </select>
         </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Grade</label>

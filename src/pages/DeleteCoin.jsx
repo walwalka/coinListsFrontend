@@ -14,7 +14,7 @@ const DeleteCoin = () => {
   const handleDeleteCoin = () => {
     setLoading(true);
     axios
-      .delete(`http://coinsbackend.walwalka.com/coins/${id}`)
+      .delete(`http://localhost:8081/coins/api/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Deleted successfully', { variant: 'success' });

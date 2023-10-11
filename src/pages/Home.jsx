@@ -17,9 +17,9 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://coinsbackend.walwalka.com/coins')
+      .get('http://localhost:8081/coins/api')
       .then((response) => {
-        setCoins(response.data.data);
+        setCoins(response.data.data.rows);
         setLoading(false);
       })
       .catch((error) => {
