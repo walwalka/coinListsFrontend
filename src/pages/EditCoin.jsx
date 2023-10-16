@@ -21,7 +21,7 @@ const EditCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-    .get(backendUrl+'/coins/api/${id}')
+    .get(backendUrl+'/coins/api/'+id)
     .then((response) => {
         setMintLocation(response.data.mintlocation);
         setMintYear(response.data.mintyear)
@@ -46,7 +46,7 @@ const EditCoin = () => {
     };
     setLoading(true);
     axios
-      .put(backendUrl+'/coins/api/'+{id}, data)
+      .put(backendUrl+'/coins/api/'+id, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Edited successfully', { variant: 'success' });
