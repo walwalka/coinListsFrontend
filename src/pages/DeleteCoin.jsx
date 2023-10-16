@@ -16,7 +16,7 @@ const DeleteCoin = () => {
   const handleDeleteCoin = () => {
     setLoading(true);
     axios
-      .delete(backendUrl+'/coins/api/${id}')
+      .delete(backendUrl+'/coins/api/'+{id})
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Deleted successfully', { variant: 'success' });

@@ -46,7 +46,7 @@ const EditCoin = () => {
     };
     setLoading(true);
     axios
-      .put(backendUrl+'/coins/api/${id}', data)
+      .put(backendUrl+'/coins/api/'+{id}, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Edited successfully', { variant: 'success' });

@@ -14,7 +14,7 @@ const ShowCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(backendUrl+'/coins/api/${id}')
+      .get(backendUrl+'/coins/api/'+{id})
       .then((response) => {
         setCoin(response.data);
         setLoading(false);
