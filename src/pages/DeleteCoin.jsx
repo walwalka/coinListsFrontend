@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+const backendUrl = import.meta.env.VITE_ENV_URL;
+
 const DeleteCoin = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ const DeleteCoin = () => {
   const handleDeleteCoin = () => {
     setLoading(true);
     axios
-      .delete(`http://coinsbackend.walwalka.com/coins/api/${id}`)
+      .delete(backendUrl+'/coins/api/${id}')
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Deleted successfully', { variant: 'success' });

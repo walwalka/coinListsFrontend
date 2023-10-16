@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 
+const backendUrl = import.meta.env.VITE_ENV_URL;
+
 const ShowCoin = () => {
   const [coin, setCoin] = useState({});
   const [loading, setLoading] = useState(false);
@@ -12,7 +14,7 @@ const ShowCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://coinsbackend.walwalka.com/coins/api/${id}`)
+      .get(backendUrl+'/coins/api/${id}')
       .then((response) => {
         setCoin(response.data);
         setLoading(false);

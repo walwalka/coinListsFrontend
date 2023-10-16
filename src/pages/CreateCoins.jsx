@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+const backendUrl = import.meta.env.VITE_ENV_URL;
+
 const CreateCoins = () => {
   const [type, setType] = useState('');
   const [mintlocation, setMintLocation] = useState('');
@@ -25,7 +27,7 @@ const CreateCoins = () => {
     };
     setLoading(true);
     axios
-      .post('http://coinsbackend.walwalka.com/coins/api', data)
+      .post(backendUrl+'/coins/api', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Created successfully', { variant: 'success' });

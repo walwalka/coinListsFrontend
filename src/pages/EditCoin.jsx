@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+const backendUrl = import.meta.env.VITE_ENV_URL;
+
 const EditCoin = () => {
   const [type, setType] = useState('');
   const [mintlocation, setMintLocation] = useState('');
@@ -19,7 +21,7 @@ const EditCoin = () => {
   useEffect(() => {
     setLoading(true);
     axios
-    .get(`http://coinsbackend.walwalka.com/coins/api/${id}`)
+    .get(backendUrl+'/coins/api/${id}')
     .then((response) => {
         setMintLocation(response.data.mintlocation);
         setMintYear(response.data.mintyear)
@@ -44,7 +46,7 @@ const EditCoin = () => {
     };
     setLoading(true);
     axios
-      .put(`http://coinsbackend.walwalka.com/coins/api/${id}`, data)
+      .put(backendUrl+'/coins/api/${id}', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Coin Edited successfully', { variant: 'success' });
