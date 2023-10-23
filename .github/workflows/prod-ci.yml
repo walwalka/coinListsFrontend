@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: dev
+    runs-on: prod-coins
     strategy:
       matrix:
         node-version: [18.x]
