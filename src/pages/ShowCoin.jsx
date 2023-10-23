@@ -6,6 +6,8 @@ import Spinner from '../components/Spinner';
 
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
+// Show coin page, this code leverages axios to populate the coin const within the element on screen. 
+
 const ShowCoin = () => {
   const [coin, setCoin] = useState({});
   const [loading, setLoading] = useState(false);
