@@ -7,7 +7,8 @@ import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import CoinsTable from '../components/home/CoinsTable';
 import CoinsCard from '../components/home/CoinsCard';
-// import CoinsTableFiltered from '../components/home/CoinsTableFiltered';
+
+const backendUrl = import.meta.env.VITE_ENV_URL;
 
 const Home = () => {
   const [coins, setCoins] = useState([]);
@@ -17,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://coinsbackend.walwalka.com/coins/api')
+      .get(backendUrl+'/coins/api')
       .then((response) => {
         setCoins(response.data.data.rows);
         setLoading(false);
