@@ -8,8 +8,10 @@ import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import CoinsTable from '../components/home/CoinsTable';
 import CoinsCard from '../components/home/CoinsCard';
 
+// Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
+// Shows coin table on page, this code leverages axios to populate the coin object within the elements in the UI. 
 const Home = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);

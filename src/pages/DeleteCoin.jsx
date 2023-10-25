@@ -5,8 +5,10 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+// Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
+// Shows delete coin toast allowing for deletion.
 const DeleteCoin = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ const DeleteCoin = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        alert('An error happened. Please Check with your administrator');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });

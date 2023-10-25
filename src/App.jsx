@@ -7,7 +7,7 @@ import EditCoin from './pages/EditCoin';
 import DeleteCoin from './pages/DeleteCoin';
 
 
-// creating routes to each of the elements
+// creating routes to each of the pages
 const App = () => {
   return (
     <Routes>
