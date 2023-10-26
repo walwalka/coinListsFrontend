@@ -5,7 +5,10 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+// Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
+
+// Shows coin object for editing, this code leverages axios to populate the coin object within the elements in the UI. 
 
 const EditCoin = () => {
   const [type, setType] = useState('');

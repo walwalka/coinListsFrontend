@@ -8,8 +8,10 @@ import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import CoinsTable from '../components/home/CoinsTable';
 import CoinsCard from '../components/home/CoinsCard';
 
+// Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
+// Shows coin table on page, this code leverages axios to populate the coin object within the elements in the UI. 
 const Home = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -48,6 +50,9 @@ const Home = () => {
       <div className='flex justify-between items-center'>
         <h1 className='text-3xl my-8'>coinList</h1>
         <Link to='/coins/create'>
+          <MdOutlineAddBox className='text-sky-800 text-4xl' />
+        </Link>
+        <Link to='/mintlocations/create'>
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
       </div>

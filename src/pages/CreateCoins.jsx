@@ -5,8 +5,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+// Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
+// creation of the coin object
 const CreateCoins = () => {
   const [type, setType] = useState('');
   const [mintlocation, setMintLocation] = useState('');
@@ -35,13 +37,12 @@ const CreateCoins = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        alert('An error happened. Please Check with your administrator');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });
   };
 
-  // how do I make these select from a drop down of options?;
   return (
     <div className='p-4'>
       <BackButton />

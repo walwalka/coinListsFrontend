@@ -4,9 +4,10 @@ import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 
+// Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
-// Show coin page, this code leverages axios to populate the coin const within the element on screen. 
+// Shows coin page, this code leverages axios to populate the coin object within the elements in the UI. 
 
 const ShowCoin = () => {
   const [coin, setCoin] = useState({});
