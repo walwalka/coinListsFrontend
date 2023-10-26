@@ -5,7 +5,7 @@ import CreateCoin from './pages/CreateCoins';
 import ShowCoin from './pages/ShowCoin';
 import EditCoin from './pages/EditCoin';
 import DeleteCoin from './pages/DeleteCoin';
-
+import CreateMint from './pages/CreateLocations';
 
 // creating routes to each of the pages
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
       <Route path='/coins/details/:id' element={<ShowCoin />} />
       <Route path='/coins/edit/:id' element={<EditCoin />} />
       <Route path='/coins/delete/:id' element={<DeleteCoin />} />
+      <Route path='/mintlocations/create' element={<CreateMint />} />
     </Routes>
   );
 };

@@ -52,6 +52,9 @@ const Home = () => {
         <Link to='/coins/create'>
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
+        <Link to='/mintlocations/create'>
+          <MdOutlineAddBox className='text-sky-800 text-4xl' />
+        </Link>
       </div>
       {loading ? (
         <Spinner />
