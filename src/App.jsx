@@ -5,13 +5,15 @@ import CreateCoin from './pages/CreateCoins';
 import ShowCoin from './pages/ShowCoin';
 import EditCoin from './pages/EditCoin';
 import DeleteCoin from './pages/DeleteCoin';
-import CreateMint from './pages/CreateLocations';
+import CreateMint from './pages/CreateMints';
+import Mints from './pages/Mints';
 
 // creating routes to each of the pages
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/mintlocations' element={<Mints />} />
       <Route path='/coins/create' element={<CreateCoin />} />
       <Route path='/coins/details/:id' element={<ShowCoin />} />
       <Route path='/coins/edit/:id' element={<EditCoin />} />

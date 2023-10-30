@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BackButton from '../components/BackButton';
+import BackButtonMints from '../components/BackButtonMints';
 import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,7 @@ const backendUrl = import.meta.env.VITE_ENV_URL;
 const CreateMint = () => {
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
+  const [usState, setusState] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -20,10 +21,11 @@ const CreateMint = () => {
     const data = {
       name,
       city,
+      usState,
     };
     setLoading(true);
     axios
-      .post(backendUrl+'/mintlocations/create', data)
+      .post(backendUrl+'/mintlocations/mints/create', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Mint Created successfully', { variant: 'success' });
@@ -39,25 +41,34 @@ const CreateMint = () => {
 
   return (
     <div className='p-4'>
-      <BackButton />
+      <BackButtonMints />
       <h1 className='text-3xl my-4'>Create Mint location Record</h1>
       {loading ? <Spinner /> : ''}
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Mint Name</label>
+          <label className='text-xl mr-4 text-gray-500'>Name</label>
           <input
             type='text'
-            value={mintname}
+            value={name}
             onChange={(e) => setName(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Mint City</label>
+          <label className='text-xl mr-4 text-gray-500'>City</label>
           <input
             type='text'
-            value={mintcity}
+            value={city}
             onChange={(e) => setCity(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div>
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>State</label>
+          <input
+            type='text'
+            value={usState}
+            onChange={(e) => setusState(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
