@@ -8,7 +8,7 @@ import { useSnackbar } from 'notistack';
 // Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;
 
-// creation of the coin object
+// creation of the mint object
 const CreateMint = () => {
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
@@ -29,7 +29,7 @@ const CreateMint = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Mint Created successfully', { variant: 'success' });
-        navigate('/');
+        navigate('/mintlocations');
       })
       .catch((error) => {
         setLoading(false);
