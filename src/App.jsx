@@ -7,18 +7,24 @@ import EditCoin from './pages/EditCoin';
 import DeleteCoin from './pages/DeleteCoin';
 import CreateMint from './pages/CreateMints';
 import Mints from './pages/Mints';
+import ShowMint from './pages/ShowMint';
+import SelectMint from './components/mints/mintSelect';
+import DeleteMint from './pages/DeleteMint';
 
-// creating routes to each of the pages
+// creating routes to each of the pages   
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/mintlocations' element={<Mints />} />
       <Route path='/coins/create' element={<CreateCoin />} />
       <Route path='/coins/details/:id' element={<ShowCoin />} />
       <Route path='/coins/edit/:id' element={<EditCoin />} />
       <Route path='/coins/delete/:id' element={<DeleteCoin />} />
+      <Route path='/mintlocations' element={<Mints />} />
       <Route path='/mintlocations/create' element={<CreateMint />} />
+      <Route path='/mintlocations/details/:id' element={<ShowMint />} />
+      <Route path='/mintselect' element={<SelectMint />} />
+      <Route path='/mintlocations/delete/:id' element={<DeleteMint />} />
     </Routes>
   );
 };

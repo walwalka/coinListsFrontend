@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import BackButtonMints from '../components/BackButtonMints';
+import BackButtonMints from '../components/mints/BackButtonMints';
 import Spinner from '../components/Spinner';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
+import CustomListDropDown from '../components/mints/mintSelect';
+import MintName from '../components/mints/mintSelect'
 
 // Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;

@@ -17,6 +17,7 @@ const EditCoin = () => {
   const [circulation, setCirculation] = useState('');
   const [grade, setGrade] = useState('');
   const [loading, setLoading] = useState(false);
+  const [optionList,setOptionList] = useState([]);
   const navigate = useNavigate();
   const {id} = useParams();
   const { enqueueSnackbar } = useSnackbar();
@@ -63,6 +64,24 @@ const EditCoin = () => {
       });
   };
 
+  const fetchData = () => {
+    axios
+      .get(backendUrl+'/mintlocations/locations')
+      .then((response) => {
+        if(response.status === 200){
+            //check the api call is success by stats code 200,201 ...etc
+            setOptionList(response.data.name.rows)
+        }else{
+            //error handle section 
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(()=>{
+    fetchData();
+  },[])
+
   return (
     <div className='p-4'>
       <BackButton />
@@ -87,12 +106,18 @@ const EditCoin = () => {
         </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Mint Location</label>
-          <input
-            type='text'
+          <select
+            disabled={false}
             value={mintlocation}
             onChange={(e) => setMintLocation(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
-          />
+        >
+            {optionList.map((item, value) => (
+            <option key={value} value={item.name}>
+                {item.name}
+            </option>
+            ))}
+        </select>
         </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Mint Year</label>

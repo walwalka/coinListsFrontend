@@ -7,6 +7,7 @@ import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete, MdHome, MdAssuredWorkload, MdOutlineBubbleChart } from 'react-icons/md';
 import CoinsTable from '../components/home/CoinsTable';
 import CoinsCard from '../components/home/CoinsCard';
+//import MintSelect from '../components/mintSelect';
 
 // Setting the const for the environments url
 const backendUrl = import.meta.env.VITE_ENV_URL;

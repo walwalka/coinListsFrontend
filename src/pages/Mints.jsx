@@ -4,7 +4,7 @@ import Spinner from '../components/Spinner';
 import { Link } from 'react-router-dom';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
-import { MdOutlineAddBox, MdOutlineDelete, MdHome, MdAttachMoney, MdOtherHouses, MdOutlineBubbleChart } from 'react-icons/md';
+import { MdOutlineAddBox, MdOutlineDelete, MdAssuredWorkload, MdOutlineBubbleChart } from 'react-icons/md';
 // import MintsCard from '../components/home/MintsCard';
 import MintsTable from '../components/mints/MintsTable';
 
@@ -39,9 +39,6 @@ const Mint = () => {
         <Link to='/mintlocations/create'>
             <MdOutlineAddBox className='text-sky-800 text-4xl'/>
           </Link>   
-        <Link to='/mintlocations'>
-            <MdHome className='text-sky-800 text-4xl'/>
-          </Link>    
         <Link to='/'>
             <MdOutlineBubbleChart className='text-sky-800 text-4xl'/>
           </Link> 
