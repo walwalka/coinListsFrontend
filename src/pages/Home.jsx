@@ -23,7 +23,7 @@ const Home = () => {
     axios
       .get(backendUrl+'/coins/api')
       .then((response) => {
-        setCoins(response.data.data.rows);
+        setCoins(response.data.data);
         setLoading(false);
       })
       .catch((error) => {

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
+import moment from 'moment';
 
 const CoinsTable = ({ coins }) => {
   return (
@@ -14,7 +15,7 @@ const CoinsTable = ({ coins }) => {
             Mint Location
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
-            Mint Year
+            Date Minted
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Circulated
@@ -37,10 +38,10 @@ const CoinsTable = ({ coins }) => {
               {coin.type}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-              {coin.mintlocation}
+             {coin.mintlocation}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-              {coin.mintyear}
+            {moment(coin.mintyear).format("YYYY-MM")}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
               {coin.circulation}
