@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     host: true, 
     strictPort: true,
-    port: 8088, 
+    port: 8080, 
     watch: {
      usePolling: true,
     }
