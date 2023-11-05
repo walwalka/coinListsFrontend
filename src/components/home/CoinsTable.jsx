@@ -15,7 +15,7 @@ const CoinsTable = ({ coins }) => {
             Mint Location
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
-            Date Minted
+            Year Minted
           </th>
           <th className='border border-slate-600 rounded-md max-md:hidden'>
             Circulated
@@ -41,7 +41,7 @@ const CoinsTable = ({ coins }) => {
              {coin.mintlocation}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
-            {moment(coin.mintyear).format("YYYY-MM")}
+            {moment(coin.mintyear).format("YYYY")}
             </td>
             <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
               {coin.circulation}
