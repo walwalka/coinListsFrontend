@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import CreateCoin from './pages/CreateCoins';
@@ -11,13 +11,15 @@ import ShowMint from './pages/ShowMint';
 import SelectMint from './components/mints/mintSelect';
 import DeleteMint from './pages/DeleteMint';
 import Login from './components/Login/Login';
+import useToken from './components/useToken';
 
 // creating routes to each of the pages   
 const App = () => {
-  const [token, setToken] = useState();
+  const { token, setToken } = useToken();
   if(!token) {
     return <Login setToken={setToken} />
   }
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />
